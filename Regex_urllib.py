@@ -13,7 +13,7 @@ try:
     #resp = urllib.request.urlopen(req)
 
     resp = urllib.request.urlopen(url+'?'+data)
-    respData = resp.read()
+    respData = resp.read().decode('utf-8')
     parsedData = re.findall(r'<p>(.*?)</p>',str(respData))
     for i in parsedData:
         print(i)
